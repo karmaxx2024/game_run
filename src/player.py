@@ -8,11 +8,6 @@ gravity = 1
 jump_power = -21
 is_jumping = False
 
-# Счет
-score = 0
-high_score = 0
-font = pygame.font.Font(None, 36)
-
 # Уровни и скины
 levels = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]  # Очки для перехода на следующий уровень
 unlocked_skins = [0]  # Начальный скин разблокирован
@@ -32,20 +27,7 @@ skins = [
     (0, 255, 255),    # Голубой
     (128, 0, 128)     # Фиолетовый
 ]
-def load_high_score():
-    try:
-        with open("../data/high_score.txt", "r") as file:
-            return int(file.read())
-    except FileNotFoundError:
-        return 0
 
-# Функция для сохранения рекорда в файл
-def save_high_score(score):
-    with open("../data/high_score.txt", "w") as file:
-        file.write(str(score))
-
-# Загрузка рекорда
-high_score = load_high_score()
 
 
 # Функция для рисования человечка
